@@ -54,7 +54,8 @@ const playerHasWon = () => {
             console.log(`${currentPlayer} wins diagonally.`)
             return true;
         }
-    } else if(spaces[8] === currentPlayer){
+    } 
+    if(spaces[8] === currentPlayer){
         if(spaces[2] === currentPlayer && spaces[5] === currentPlayer){
             console.log(`${currentPlayer} wins on the right.`)
             return true;
@@ -65,9 +66,15 @@ const playerHasWon = () => {
         }
        
     }
-    if (spaces[4] === player) {
-        
-    }
+    if (spaces[4] === currentPlayer) {
+        if(spaces[1] === currentPlayer && spaces[7] === currentPlayer){
+            console.log(`${currentPlayer} wins vertically in the middle.`)
+            return true;
+        }
+        if(spaces[3] === currentPlayer && spaces[5] === currentPlayer){
+            console.log(`${currentPlayer} wins horizontally in the middle.`)
+             return true;
+        }
 }
 
 drawBoard();
